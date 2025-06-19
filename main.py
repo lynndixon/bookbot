@@ -1,3 +1,6 @@
+from stats import count_num_words
+from stats import count_num_characters
+
 def get_book_test(filepath):
     """
     Reads a book from a given file path and returns its content.
@@ -12,26 +15,13 @@ def get_book_test(filepath):
         book_content = file.read()
     return book_content
 
-def count_num_words(book_text):
-    """
-    Counts the number of words in the given book text.
-    
-    Args:
-        book_text (str): The content of the book.
-        
-    Returns:
-        int: The number of words in the book.
-    """
-    words = book_text.split()
-    print(f"{len(words)} words found in the document")
-    return len(words)
-
 
 main_book_path = "books/frankenstein.txt"
 
 def main():
     book_text = get_book_test(main_book_path)
     num_words = count_num_words(book_text)
+    num_characters = count_num_characters(book_text)
     return
 
 main()
