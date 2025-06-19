@@ -12,11 +12,26 @@ def get_book_test(filepath):
         book_content = file.read()
     return book_content
 
-main_book_path = 'books/frankenstein.txt'
+def count_num_words(book_text):
+    """
+    Counts the number of words in the given book text.
+    
+    Args:
+        book_text (str): The content of the book.
+        
+    Returns:
+        int: The number of words in the book.
+    """
+    words = book_text.split()
+    print(f"{len(words)} words found in the document")
+    return len(words)
+
+
+main_book_path = "books/frankenstein.txt"
 
 def main():
     book_text = get_book_test(main_book_path)
-    print(f"{book_text}")
-    return book_text
+    num_words = count_num_words(book_text)
+    return
 
 main()
